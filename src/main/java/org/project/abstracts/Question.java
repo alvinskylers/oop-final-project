@@ -13,5 +13,4 @@ public abstract class Question {
 
     public abstract void answerQuestion(String answer);
 
-
 }

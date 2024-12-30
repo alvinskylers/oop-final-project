@@ -30,7 +30,7 @@ public class MultipleChoiceQuestion extends Question {
 
     @Override
     public String toString() {
-        String str = "";
+        String str = "Question: \n";
         str += this.question;
         for (int i = 0; i < this.options.length; i++) {
             str += this.options[i] + "\n";

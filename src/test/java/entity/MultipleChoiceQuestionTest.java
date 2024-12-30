@@ -15,7 +15,7 @@ public class MultipleChoiceQuestionTest {
     @Test
     public void doesQuestionExist() {
        assertNotNull(question);
-        assertInstanceOf(MultipleChoiceQuestion.class, question);
+       assertInstanceOf(MultipleChoiceQuestion.class, question);
     }
 
     @Test

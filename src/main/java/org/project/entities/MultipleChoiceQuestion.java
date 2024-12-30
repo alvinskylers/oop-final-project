@@ -3,7 +3,7 @@ package org.project.entities;
 import org.project.abstracts.Question;
 
 public class MultipleChoiceQuestion extends Question {
-    public String question;
+
     public String[] options;
     public int correctOption;
 
@@ -15,6 +15,7 @@ public class MultipleChoiceQuestion extends Question {
 
     }
 
+    @Override
     public boolean isPass() {
         return this.isCorrect;
     }
@@ -33,9 +34,30 @@ public class MultipleChoiceQuestion extends Question {
         String str = "Question: \n";
         str += this.question;
         for (int i = 0; i < this.options.length; i++) {
-            str += this.options[i] + "\n";
+            str += this.options[i];
+            if (i < this.options.length-1){
+                str += "\n";
+            }
         }
         return str;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this==obj) {
+            return true;
+        }
+
+        if (obj == null || getClass() != obj.getClass()) {
+            return true;
+        }
+
+        Question other = (Question) obj;
+        if (((MultipleChoiceQuestion) other).question.equals(this.question) ) {
+            return true;
+        }
+
+        return false;
     }
 }
 

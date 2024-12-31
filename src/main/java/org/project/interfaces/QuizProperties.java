@@ -6,7 +6,9 @@ public interface QuizProperties {
 
     public void addQuestion(Question question);
 
-    public String printScore();
+    public void printScore();
+
+    public void printQuizInformation();
 
 
 }

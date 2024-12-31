@@ -1,4 +1,61 @@
 package org.project.player;
 
+import java.util.Scanner;
+
 public class UserInterface {
+
+    private Scanner scanner;
+
+    public UserInterface(Scanner scanner) {
+        this.scanner = scanner;
+    }
+
+    public void start() {
+        while (true) {
+            printMenu();
+            String input = scanner.nextLine();
+            if (input.equals("1")) {
+                startQuiz();
+            } else if (input.equals("2")) {
+                printHelp();
+            } else if (input.equals("3")) {
+                System.out.println("See you next time!");
+                System.exit(0);
+            }
+        }
+
+    }
+
+
+
+    private void printMenu() {
+        System.out.println("\n====== CLI Quiz Program ======\n");
+        System.out.println("[1] Start Quiz\n[2] Help Quiz\n[3] Exit");
+        System.out.print("Enter your choice: ");
+    }
+
+    private void printHelp() {
+        System.out.println("\n==== CLI Quiz Program ====\n");
+        System.out.println(" === Quiz Types === ");
+        System.out.println("There are only 2 kind of quiz types. Multiple Choice and True or False\n" +
+                            "To answer Multiple Choice Questions, you only need to input the number of the corresponding choice.\n" +
+                            "To answer True or False you can answer \"true\", \"yes\", \"false\" or \"no\" to the given statement.\n");
+
+        System.out.println(" === Import Quiz === ");
+        System.out.println("Yes, you can import your own quiz. The first line of the file is the header. " +
+                            "\nIt contains the quiz title & description ex: (Quiz Title), (Quiz Desc)" +
+                            "\nTo import multiple question choice you must provide the following fields:\n" +
+                            "question, option1, option2, option3, option4, answer(option number)\n ");
+
+        System.out.println("for True or False, you can follow the following format: \n" +
+                            "statement, answer (boolean only)\n" +
+                            "there is no limit of how many questions you can import\n" +
+                            "but do keep in mind to make sure all of the questions \n" +
+                            "follow this format or else the program will not import them!");
+
+    }
+
+    private void startQuiz() {
+        System.out.println("Scanning /questions directory...");
+    }
 }

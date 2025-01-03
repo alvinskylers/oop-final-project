@@ -3,11 +3,14 @@ package org.project.player;
 import java.util.Scanner;
 
 public class UserInterface {
-
     private Scanner scanner;
+
+    private QuizEntity quiz;
+    private String line = "\n============================\n";
 
     public UserInterface(Scanner scanner) {
         this.scanner = scanner;
+
     }
 
     public void start() {
@@ -15,7 +18,7 @@ public class UserInterface {
             printMenu();
             String input = scanner.nextLine();
             if (input.equals("1")) {
-                startQuiz();
+//                startQuiz();
             } else if (input.equals("2")) {
                 printHelp();
             } else if (input.equals("3")) {
@@ -25,8 +28,6 @@ public class UserInterface {
         }
 
     }
-
-
 
     private void printMenu() {
         System.out.println("\n====== CLI Quiz Program ======\n");
@@ -51,11 +52,41 @@ public class UserInterface {
                             "statement, answer (boolean only)\n" +
                             "there is no limit of how many questions you can import\n" +
                             "but do keep in mind to make sure all of the questions \n" +
-                            "follow this format or else the program will not import them!");
+                            "follow this format or else the program will not import them!" + line);
 
     }
 
-    private void startQuiz() {
-        System.out.println("Scanning /questions directory...");
-    }
+//    private void startQuiz() {
+//        System.out.println("Scanning questions directory...");
+//        String[] files = fileUtility.grabCurrentFiles();
+//        if (files==null) {
+//            Throwable e = new Throwable("question directory is empty or no supported file extension");
+//            System.out.println("error: " + e.getMessage());
+//        } else {
+//            System.out.println("files found..." + line);
+//            System.out.println("choose a question source: ");
+//            int i = 1;
+//            for (String file : files) {
+//                System.out.println("[" +i + "] " + file);
+//                i++;
+//            }
+//            while (true) {
+//                System.out.print("question source number: ");
+//                String input = scanner.nextLine();
+//                try {
+//                    int choice = Integer.parseInt(input);
+//                    if (choice < files.length) {
+//
+//                    }
+//                } catch (NumberFormatException e) {
+//                    System.out.println("not a valid option.");
+//                }
+//            }
+//        }
+//    }
+
+
+
+
+
 }
